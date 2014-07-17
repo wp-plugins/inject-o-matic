@@ -1,7 +1,7 @@
 === Inject-O-Matic ===
 Contributors: twinpictures, baden03
 Donate link: http://plugins.twinpictures.de/flying-houseboat/
-Tags: inject, script, jQuery, javascript, header, footer, custom script, insert
+Tags: inject, script, jQuery, javascript, header, footer, custom script, insert, twinpictures, plugin-oven
 Requires at least: 3.5
 Tested up to: 4.0
 Stable tag: 0.2

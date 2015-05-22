@@ -3,8 +3,8 @@ Contributors: twinpictures, baden03
 Donate link: http://plugins.twinpictures.de/flying-houseboat/
 Tags: inject, script, jQuery, javascript, header, footer, custom script, insert, twinpictures, plugin-oven
 Requires at least: 3.5
-Tested up to: 4.0
-Stable tag: 0.2
+Tested up to: 4.2.2
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,9 @@ We like to rock the party.
 1. Inject-O-Matic Options Page. Very exciting stuff going on here.
 
 == Changelog ==
+
+= 1.0.0 =
+* Added Inject for css and script links
 
 = 0.2 =
 * Footer script now loads with a much lower priority

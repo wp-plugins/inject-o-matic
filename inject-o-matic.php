@@ -5,7 +5,7 @@ Text Domain: injectomat
 Domain Path: /language
 Plugin URI: http://plugins.twinpictures.de/plugins/inject-o-matic/
 Description: Inject custom jQuery/Javascript into the header and/or footer of a WordPress site.
-Version: 0.2
+Version: 1.0.0
 Author: twinpictures
 Author URI: http://twinpictuers.de
 License: GPL2
@@ -21,14 +21,14 @@ class WP_Inject_O_Matic {
 	 * Current version
 	 * @var string
 	 */
-	var $version = '0.2';
+	var $version = '1.0.0';
 
 	/**
 	 * Used as prefix for options entry
 	 * @var string
 	 */
 	var $domain = 'injectomat';
-	
+
 	/**
 	 * Name of the options
 	 * @var string
@@ -40,49 +40,57 @@ class WP_Inject_O_Matic {
 	 */
 	var $options = array(
 		'custom_header_script' => '',
-		'custom_footer_script' => ''
+		'custom_header_inject' => '',
+		'custom_footer_script' => '',
+		'custom_footer_inject' => ''
 	);
-	
-	
+
+
 	/**
 	 * PHP5 constructor
 	 */
 	function __construct() {
 		// set option values
 		$this->_set_options();
-		
+
 		// load text domain for translations
 		load_plugin_textdomain( 'injectomat', FALSE, dirname( plugin_basename( __FILE__ ) ) . '/language/' );
 
 		//header scripts
 		add_action('wp_enqueue_scripts', array( $this, 'header_scripts' ));
-		
+
 		//footer scripts
 		add_action('wp_footer', array( $this, 'footer_scripts' ), 70, 0);
-		
+
 		// add actions
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
 	}
-	
+
 	//header scripts
 	function header_scripts(){
+		if( !empty( $this->options['custom_header_inject'] ) ){
+			echo $this->options['custom_header_inject'];
+		}
 		if( !empty( $this->options['custom_header_script'] ) ){
 			echo "\n<script language='javascript' type='text/javascript'>\n";
 			echo $this->options['custom_header_script'];
 			echo "\n</script>\n";
 		}
 	}
-	
+
 	//footer scripts
 	function footer_scripts(){
+		if( !empty( $this->options['custom_footer_inject'] ) ){
+			echo $this->options['custom_footer_inject'];
+		}
 		if( !empty( $this->options['custom_footer_script'] ) ){
 			echo "\n<script language='javascript' type='text/javascript'>\n";
 			echo $this->options['custom_footer_script'];
 			echo "\n</script>\n";
 		}
 	}
-	
+
 	/**
 	 * Callback admin_menu
 	 */
@@ -92,7 +100,7 @@ class WP_Inject_O_Matic {
 			$page = add_options_page('Inject-O-Matic Options', 'Inject-O-Matic', 'manage_options', 'inject-o-matic-options', array( $this, 'options_page' ));
 		}
 	}
-	
+
 	/**
 	 * Callback admin_init
 	 */
@@ -100,7 +108,7 @@ class WP_Inject_O_Matic {
 		// register settings
 		register_setting( $this->domain, $this->options_name );
 	}
-	
+
 	/**
 	 * Admin options page
 	 */
@@ -129,7 +137,7 @@ class WP_Inject_O_Matic {
 		<div class="wrap">
 			<h2>Inject-O-Matic</h2>
 		</div>
-		
+
 		<div class="postbox-container metabox-holder meta-box-sortables" style="width: 69%">
 			<div style="margin:0 5px;">
 				<div class="postbox">
@@ -151,14 +159,26 @@ class WP_Inject_O_Matic {
 									</td>
 								</tr>
 								<tr>
+									<th><?php _e( 'Header Inject', 'injectomat' ) ?></th>
+									<td><label><textarea id="<?php echo $this->options_name ?>[custom_header_inject]" name="<?php echo $this->options_name ?>[custom_header_inject]" style="width: 100%; height: 150px;"><?php echo $options['custom_header_inject']; ?></textarea>
+										<br /><span class="description"><?php _e('CSS and script links to inject into the Header', 'injectomat'); ?></span></label>
+									</td>
+								</tr>
+								<tr>
 									<th><?php _e( 'Footer Script', 'injectomat' ) ?></th>
 									<td><label><textarea id="<?php echo $this->options_name ?>[custom_footer_script]" name="<?php echo $this->options_name ?>[custom_footer_script]" style="width: 100%; height: 150px;"><?php echo $options['custom_footer_script']; ?></textarea>
 										<br /><span class="description"><?php _e('Script to inject into the Footer', 'injectomat'); ?></span></label>
 									</td>
 								</tr>
+								<tr>
+									<th><?php _e( 'Footer Inject', 'injectomat' ) ?></th>
+									<td><label><textarea id="<?php echo $this->options_name ?>[custom_footer_inject]" name="<?php echo $this->options_name ?>[custom_footer_inject]" style="width: 100%; height: 150px;"><?php echo $options['custom_footer_inject']; ?></textarea>
+										<br /><span class="description"><?php _e('CSS and script links to inject into the Footer', 'injectomat'); ?></span></label>
+									</td>
+								</tr>
 								</table>
 							</fieldset>
-							
+
 							<p class="submit">
 								<input class="button-primary" type="submit" style="float:right" value="<?php _e( 'Save Changes' ) ?>" />
 							</p>
@@ -167,7 +187,7 @@ class WP_Inject_O_Matic {
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="postbox-container side metabox-holder meta-box-sortables" style="width:29%;">
 			<div style="margin:0 5px;">
 				<div class="postbox">
@@ -195,7 +215,7 @@ class WP_Inject_O_Matic {
 					<div class="handlediv" title="<?php _e( 'Click to toggle' ) ?>"><br/></div>
 					<h3 class="handle"><?php _e( 'Level Up!' ) ?></h3>
 					<div class="inside">
-						<p><?php printf(__( '%sInject-Pro-Matic%s is our premium plugin that offers a few additional attributes and features for <i>ultimate</i> flexibility.', 'injectomatic' ), '<a href="http://plugins.twinpictures.de/premium-plugins/inject-pro-matic/">', '</a>'); ?></p>		
+						<p><?php printf(__( '%sInject-Pro-Matic%s is our premium plugin that offers a few additional attributes and features for <i>ultimate</i> flexibility.', 'injectomatic' ), '<a href="http://plugins.twinpictures.de/premium-plugins/inject-pro-matic/">', '</a>'); ?></p>
 						<h4><?php _e('Reasons To Go Pro', 'injectomat'); ?></h4>
 						<ol>
 							<li><?php _e('You are an advanced user and want/need additional features', 'injectomat'); ?></li>
@@ -221,7 +241,7 @@ class WP_Inject_O_Matic {
 		if ( empty( $saved_options ) ) {
 			$saved_options = get_option( $this->domain . 'options' );
 		}
-		
+
 		// set all options
 		if ( ! empty( $saved_options ) ) {
 			foreach ( $this->options AS $key => $option ) {
@@ -229,7 +249,7 @@ class WP_Inject_O_Matic {
 			}
 		}
 	}
-	
+
 } // end class WP_Inject_O_Matic
 
 

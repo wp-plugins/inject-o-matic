@@ -1,0 +1,168 @@
+# Copyright (C) 2014 Inject-O-Matic
+# This file is distributed under the same license as the Inject-O-Matic package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Inject-O-Matic 0.2\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/injectomat\n"
+"POT-Creation-Date: 2014-07-17 09:00:48+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: inject-o-matic.php:109
+msgid "really tied the room together"
+msgstr ""
+
+#: inject-o-matic.php:110
+msgid "made you feel all warm and fuzzy on the inside"
+msgstr ""
+
+#: inject-o-matic.php:111
+msgid "restored your faith in humanity... even if only for a fleeting second"
+msgstr ""
+
+#: inject-o-matic.php:112
+msgid "rocked your world"
+msgstr ""
+
+#: inject-o-matic.php:113
+msgid "inspired you to commit a random act of kindness"
+msgstr ""
+
+#: inject-o-matic.php:114
+msgid "encouraged more regular flossing of the teeth"
+msgstr ""
+
+#: inject-o-matic.php:115
+msgid "helped organize your life in the small ways that matter"
+msgstr ""
+
+#: inject-o-matic.php:116
+msgid "saved your minutes--if not tens of minutes--writing your own solution"
+msgstr ""
+
+#: inject-o-matic.php:117
+msgid "brightened your day... or darkened if if you are trying to sleep in"
+msgstr ""
+
+#: inject-o-matic.php:118
+msgid "caused you to dance a little jig of joy and joyousness"
+msgstr ""
+
+#: inject-o-matic.php:119
+msgid "inspired you to tweet a little @twinpictues social love"
+msgstr ""
+
+#: inject-o-matic.php:120
+msgid "tasted great, while also being less filling"
+msgstr ""
+
+#: inject-o-matic.php:121
+msgid "caused you to shout: \"everybody spread love, give me some mo!\""
+msgstr ""
+
+#: inject-o-matic.php:122
+msgid "helped you keep the funk alive"
+msgstr ""
+
+#: inject-o-matic.php:123
+msgid "<a href=\"http://www.youtube.com/watch?v=dvQ28F5fOdU\" target=\"_blank\">soften hands while you do dishes</a>"
+msgstr ""
+
+#: inject-o-matic.php:124
+msgid "helped that little old lady <a href=\"http://www.youtube.com/watch?v=Ug75diEyiA0\" target=\"_blank\">find the beef</a>"
+msgstr ""
+
+#: inject-o-matic.php:136 inject-o-matic.php:174 inject-o-matic.php:195
+msgid "Click to toggle"
+msgstr ""
+
+#: inject-o-matic.php:137
+msgid "Inject-O-Matic Settings"
+msgstr ""
+
+#: inject-o-matic.php:148
+msgid "Header Script"
+msgstr ""
+
+#: inject-o-matic.php:150
+msgid "Script to inject into the Header"
+msgstr ""
+
+#: inject-o-matic.php:154
+msgid "Footer Script"
+msgstr ""
+
+#: inject-o-matic.php:156
+msgid "Script to inject into the Footer"
+msgstr ""
+
+#: inject-o-matic.php:163
+msgid "Save Changes"
+msgstr ""
+
+#: inject-o-matic.php:175
+msgid "About"
+msgstr ""
+
+#: inject-o-matic.php:178
+msgid "Inject jQuery and other Javascript into the header and/or footer of a WordPress site."
+msgstr ""
+
+#: inject-o-matic.php:180
+msgid "%sDetailed documentation%s, complete with working demonstrations of all shortcode attributes, is available for your instructional enjoyment."
+msgstr ""
+
+#: inject-o-matic.php:181
+msgid "Help %translate%s this plugin into your language"
+msgstr ""
+
+#: inject-o-matic.php:182
+msgid "Free, community based %ssupport%s"
+msgstr ""
+
+#: inject-o-matic.php:183
+msgid "If Inject-O-Matic %s, please consider %sreviewing it at WordPress.org%s to better help others make informed plugin choices."
+msgstr ""
+
+#: inject-o-matic.php:196
+msgid "Level Up!"
+msgstr ""
+
+#: inject-o-matic.php:198
+msgid "%sInject-Pro-Matic%s is our premium plugin that offers a few additional attributes and features for <i>ultimate</i> flexibility."
+msgstr ""
+
+#: inject-o-matic.php:199
+msgid "Reasons To Go Pro"
+msgstr ""
+
+#: inject-o-matic.php:201
+msgid "You are an advanced user and want/need additional features"
+msgstr ""
+
+#: inject-o-matic.php:202
+msgid "Inject-O-Matic was just what I needed. Here, have some money."
+msgstr ""
+#. Plugin Name of the plugin/theme
+msgid "Inject-O-Matic"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://plugins.twinpictures.de/plugins/inject-o-matic/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Inject custom jQuery/Javascript into the header and/or footer of a WordPress site."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "twinpictures"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://twinpictuers.de"
+msgstr ""
